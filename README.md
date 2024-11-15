@@ -31,7 +31,7 @@ The game in its current state is unfinished, and I plan to add many more rooms.
 1. Clone or download the project to your local machine.
 2. Make sure you have the JavaFX SDK available and correctly linked to the project.
 3. Set the following VM options to add the JavaFX module path and necessary modules:
---module-path "<path_to_javafx_sdk_lib>" --add-modules javafx.controls,javafx.fxml,javafx.media
+'--module-path "<path_to_javafx_sdk_lib>" --add-modules javafx.controls,javafx.fxml,javafx.media'
 
 4. Run the `Main` class to start the game.
 
