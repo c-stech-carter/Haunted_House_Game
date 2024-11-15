@@ -1,3 +1,12 @@
+/*
+Author: Charles Carter
+Date: 11/14/2024
+
+This is the main class for my final project for CSCI 1112 at STECH.
+The program is a game that uses Open JavaFX and simulates exploring a haunted house using pixel art style graphics.
+ */
+
+
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -84,6 +93,94 @@ public class Main extends Application {
         updateRoom(findRoomByName("Front Yard"));
     }
 
+
+
+    private Room findRoomByName(String roomName) {
+        for (Room room : rooms) {
+            if (room.getName().equalsIgnoreCase(roomName)) {
+                return room;
+            }
+        }
+        return null;
+    }
+
+    private void updateRoom(Room room) {
+        if (room == null) return;
+
+        // Update the text area with the room's description
+        textAreaStory.setText(room.getDescription());
+
+        // Update the image in the game window
+        Image roomImage = new Image(room.getImagePath());
+        backgroundView.setImage(roomImage);
+
+        // Create a fade transition for the room image
+        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1), backgroundView);
+        fadeTransition.setFromValue(0.0);
+        fadeTransition.setToValue(1.0);
+        fadeTransition.play();
+
+        // Update the exits in the combo box
+        exitsComboBox.getItems().clear();
+        exitsComboBox.getItems().addAll(room.getExits());
+        exitsComboBox.setValue(null); // Clear any existing selection
+
+        if (room.getName().equalsIgnoreCase("Kitchen")) {
+            animateLightsFlicker(); // Specific animation for the Kitchen
+        }
+        else if (room.getName().equalsIgnoreCase("Bathroom") ||
+                 room.getName().equalsIgnoreCase("Upstairs")
+                ){
+            showGhost(); // Call the ghost method
+        }
+    }
+
+    // Method to animate the lights flickering in the Kitchen
+    private void animateLightsFlicker() {
+        FadeTransition lightsFlicker = new FadeTransition(Duration.seconds(0.1), backgroundView);
+        lightsFlicker.setFromValue(1.0);
+        lightsFlicker.setToValue(0.2);
+        lightsFlicker.setCycleCount(4); // Flicker five times
+        lightsFlicker.setAutoReverse(true);
+        lightsFlicker.play();
+    }
+
+    private void showGhost() {
+        // Load the ghost image
+        Image ghostImage = new Image("file:src/resources/image/Ghost.png");
+        ImageView ghostView = new ImageView(ghostImage);
+        ghostView.setOpacity(0.0); // Start fully transparent
+
+        // Position the ghost in the room
+        ghostView.setLayoutX(500);
+        ghostView.setLayoutY(300);
+
+        // Add the ghost to the game window
+        gameWindow.getChildren().add(ghostView);
+
+        // Create a fade-in transition for the ghost
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(2), ghostView);
+        fadeIn.setFromValue(0.0); // Start at fully transparent
+        fadeIn.setToValue(0.6);   // Fade to semi-transparent
+
+        // Create a fade-out transition for the ghost
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), ghostView);
+        fadeOut.setFromValue(0.6); // Start at semi-transparent
+        fadeOut.setToValue(0.0);   // Fade to fully transparent
+
+        // Set a delay for the fade-out to give the appearance some time
+        fadeOut.setDelay(Duration.seconds(2));
+
+        // After fade-in completes, play fade-out
+        fadeIn.setOnFinished(e -> fadeOut.play());
+
+        // After fade-out completes, remove the ghost from the scene
+        fadeOut.setOnFinished(e -> gameWindow.getChildren().remove(ghostView));
+
+        // Start the fade-in transition
+        fadeIn.play();
+    }
+
     private void initializeRooms() {
         rooms = new ArrayList<>();
         rooms.add(new Room(
@@ -158,94 +255,9 @@ public class Main extends Application {
         // Add more rooms as needed...
     }
 
-    private Room findRoomByName(String roomName) {
-        for (Room room : rooms) {
-            if (room.getName().equalsIgnoreCase(roomName)) {
-                return room;
-            }
-        }
-        return null;
-    }
-
-    private void updateRoom(Room room) {
-        if (room == null) return;
-
-        // Update the text area with the room's description
-        textAreaStory.setText(room.getDescription());
-
-        // Update the image in the game window
-        Image roomImage = new Image(room.getImagePath());
-        backgroundView.setImage(roomImage);
-
-        // Create a fade transition for the room image
-        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1), backgroundView);
-        fadeTransition.setFromValue(0.0);
-        fadeTransition.setToValue(1.0);
-        fadeTransition.play();
-
-        // Update the exits in the combo box
-        exitsComboBox.getItems().clear();
-        exitsComboBox.getItems().addAll(room.getExits());
-        exitsComboBox.setValue(null); // Clear any existing selection
-
-        if (room.getName().equalsIgnoreCase("Kitchen")) {
-            animateLightsFlicker(); // Specific animation for the Kitchen
-        }
-        else if (room.getName().equalsIgnoreCase("Parlor") ||
-                 room.getName().equalsIgnoreCase("Bathroom") ||
-                 room.getName().equalsIgnoreCase("Upstairs")
-                ){
-            showGhost(); // Call the ghost method
-        }
-    }
-
-    // Method to animate the lights flickering in the Kitchen
-    private void animateLightsFlicker() {
-        FadeTransition lightsFlicker = new FadeTransition(Duration.seconds(0.1), backgroundView);
-        lightsFlicker.setFromValue(1.0);
-        lightsFlicker.setToValue(0.2);
-        lightsFlicker.setCycleCount(4); // Flicker five times
-        lightsFlicker.setAutoReverse(true);
-        lightsFlicker.play();
-    }
-
     public static void main(String[] args) {
         launch(args);
     }
 
-    private void showGhost() {
-        // Load the ghost image
-        Image ghostImage = new Image("file:src/resources/image/Ghost.png");
-        ImageView ghostView = new ImageView(ghostImage);
-        ghostView.setOpacity(0.0); // Start fully transparent
 
-        // Position the ghost in the room
-        ghostView.setLayoutX(500);
-        ghostView.setLayoutY(300);
-
-        // Add the ghost to the game window
-        gameWindow.getChildren().add(ghostView);
-
-        // Create a fade-in transition for the ghost
-        FadeTransition fadeIn = new FadeTransition(Duration.seconds(2), ghostView);
-        fadeIn.setFromValue(0.0); // Start at fully transparent
-        fadeIn.setToValue(0.6);   // Fade to semi-transparent
-
-        // Create a fade-out transition for the ghost
-        FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), ghostView);
-        fadeOut.setFromValue(0.6); // Start at semi-transparent
-        fadeOut.setToValue(0.0);   // Fade to fully transparent
-
-        // Set a delay for the fade-out to give the appearance some time
-        fadeOut.setDelay(Duration.seconds(2));
-
-        // After fade-in completes, play fade-out
-        fadeIn.setOnFinished(e -> fadeOut.play());
-
-        // After fade-out completes, remove the ghost from the scene
-        fadeOut.setOnFinished(e -> gameWindow.getChildren().remove(ghostView));
-
-        // Start the fade-in transition
-        fadeIn.play();
-    }
 }
