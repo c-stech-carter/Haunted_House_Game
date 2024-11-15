@@ -1,3 +1,13 @@
+/*
+Author: Charles Carter
+Date: 11/14/2024
+
+This is the Room class for my Haunted House game, the constructor creates an object with a name for the room, a description,
+an image path for the graphic, and a String array with possible exits.
+ */
+
+
+
 public class Room {
     private String name;
     private String description;
