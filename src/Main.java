@@ -20,6 +20,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -39,6 +41,17 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        try {
+            String audioPath = getClass().getResource("/resources/media/Music.mp3").toExternalForm();
+            Media backgroundMusic = new Media(audioPath);
+            MediaPlayer mediaPlayer = new MediaPlayer(backgroundMusic);
+            mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); // Loop the audio continuously
+            mediaPlayer.play();
+        } catch (Exception e) {
+            e.printStackTrace(); // Prints the exception if there is an issue with the media file
+        }
+
+
         // Initialize UI Components
         borderPane = new BorderPane();
         borderPane.setPadding(new Insets(10, 10, 10, 10));
@@ -185,8 +198,8 @@ public class Main extends Application {
         rooms = new ArrayList<>();
         rooms.add(new Room(
                 "Front Yard",
-                "After crashing your car up the road you saw some lights up what seemed to be a deserted road. " +
-                        "After some time walking you could see a large house in the distance.   Now, that you've arrived, " +
+                "After crashing your car and walking for several hours, you saw some lights in the distance of what seemed to be a deserted road. " +
+                        "The way is difficult, and your legs start to ache, but now that you've arrived, " +
                         "this 'house' seems to be empty, and a deep dread has seized your heart.  The front door awaits you. ",
                 "file:src/resources/image/FrontYard.png",
                 new String[]{"Entryway"}
@@ -230,8 +243,9 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Upstairs",
-                "You are in a living room at the top of the stairs.  " +
-                        "Behind you, stairs go back to the entryway.",
+                "You are in a living room at the top of the stairs.  As you enter this area, your blood freezes as " +
+                        "you see a ghostly apparition appear in the center of the room momentarily.  Behind you, stairs go back"+
+                        "to the entryway.",
                 "file:src/resources/image/Upstairs.png",
                 new String[]{"Entryway", "Bedroom"}
         ));
