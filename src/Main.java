@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends Application {
-
+    //Initial declaration of some variables.
     private BorderPane borderPane;
     private Pane gameWindow;
     private TextArea textAreaStory;
@@ -57,10 +57,12 @@ public class Main extends Application {
         borderPane.setPadding(new Insets(10, 10, 10, 10));
         borderPane.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
 
-        gameWindow = new Pane();
-        backgroundView = new ImageView();
+        gameWindow = new Pane(); //Main window for graphic display
+        backgroundView = new ImageView(); //ImageView for room graphic display
         gameWindow.getChildren().add(backgroundView);
 
+
+        //TextArea for describing each room
         textAreaStory = new TextArea();
         textAreaStory.setWrapText(true);
         textAreaStory.setEditable(false);
@@ -72,14 +74,17 @@ public class Main extends Application {
         scrollPane.setFitToHeight(false);
         scrollPane.setStyle("-fx-background: black;");
 
+
+        //ComboBox for exits
         exitsComboBox = new ComboBox<>();
         exitsComboBox.setVisibleRowCount(3);
+        exitsComboBox.setPrefWidth(200);
         exitsComboBox.setOnAction(e -> {
             String selectedExit = exitsComboBox.getValue();
             Room nextRoom = findRoomByName(selectedExit);
             if (nextRoom != null) {
-                updateRoom(nextRoom);
-            }
+                updateRoom(nextRoom);  //Method call for different rooms depending on selection
+            }                          //The method also controls what ends up currently in the combobox
         });
 
         Label exitsLabel = new Label("EXITS", exitsComboBox);
@@ -87,7 +92,7 @@ public class Main extends Application {
         exitsLabel.setContentDisplay(ContentDisplay.BOTTOM);
         HBox.setMargin(exitsLabel, new Insets(-70, 0, 0, 20));
 
-        HBox optionsTab = new HBox();
+        HBox optionsTab = new HBox();  //HBox that sits at bottom of the screen with all the interactive elements
         optionsTab.setAlignment(Pos.CENTER);
         optionsTab.getChildren().add(scrollPane);
         optionsTab.getChildren().add(exitsLabel);
@@ -95,6 +100,8 @@ public class Main extends Application {
         borderPane.setTop(gameWindow);
         borderPane.setBottom(optionsTab);
 
+
+        //Setting up the main scene
         Scene scene = new Scene(borderPane, 1320, 900);
         primaryStage.setTitle("Haunted House Game");
         primaryStage.setScene(scene);
@@ -102,12 +109,12 @@ public class Main extends Application {
         primaryStage.show();
 
         // Initialize Rooms
-        initializeRooms();
-        updateRoom(findRoomByName("Front Yard"));
+        initializeRooms();  //Method call that initializes all rooms.
+        updateRoom(findRoomByName("Front Yard"));  //Method for controlling the graphics and exits
     }
 
 
-
+    //Method for searching for specific rooms in 'rooms' Room ArrayList
     private Room findRoomByName(String roomName) {
         for (Room room : rooms) {
             if (room.getName().equalsIgnoreCase(roomName)) {
@@ -141,8 +148,8 @@ public class Main extends Application {
         if (room.getName().equalsIgnoreCase("Kitchen")) {
             animateLightsFlicker(); // Specific animation for the Kitchen
         }
-        else if (room.getName().equalsIgnoreCase("Bathroom") ||
-                 room.getName().equalsIgnoreCase("Upstairs")
+        else if (room.getName().equalsIgnoreCase("Washroom") ||
+                 room.getName().equalsIgnoreCase("Upstairs Loft")
                 ){
             showGhost(); // Call the ghost method
         }
@@ -194,76 +201,165 @@ public class Main extends Application {
         fadeIn.play();
     }
 
+
+
+    //Rooms are initialized here
     private void initializeRooms() {
         rooms = new ArrayList<>();
         rooms.add(new Room(
                 "Front Yard",
-                "After crashing your car and walking for several hours, you saw some lights in the distance of what seemed to be a deserted road. " +
-                        "The way is difficult, and your legs start to ache, but now that you've arrived, " +
-                        "this 'house' seems to be empty, and a deep dread has seized your heart.  The front door awaits you. ",
+                "What a night... You've crashed your car in the middle of nowhere.  Whatever selfish " +
+                        "reason you had to travel so late at night to visit your family across the state, seems " +
+                        "silly now.   \"I should've waited until the morning,\" you say to yourself, as a bitter " +
+                        "cold sets in.  After waiting for someone to pass by on the road for several hours, no " +
+                        "help arrives, and the whole time there is no service for your phone, not even GPS.  " +
+                        "Shivering you begin to walk out of desperation, and after a long time you see a faint " +
+                        "light down a very unkempt road that departs from the highway.   The cold begins to " +
+                        "become unbearable, and your shivering is becoming violent as it shakes your whole body. "+
+                        "Soon, you see a very old looking house, with many lights on, although you can see no one in " +
+                        "any of them.  You rush to the door, nearly collapsing from the cold.  Momentarily you pause, " +
+                        "as a very deep feeling of unease fills your mind. Knocking at the door brings no answer, " +
+                        "and you decide to enter the home, so that you will not die of hypothermia outside it, waiting. " +
+                        "The door is unlocked.",
                 "file:src/resources/image/FrontYard.png",
-                new String[]{"Entryway"}
+                new String[]{"Front Hall"}
         ));
         rooms.add(new Room(
                 "Parlor",
-                "You are now in the parlor. The room is empty, but does not feel so. " +
-                        "Several paintings adorn the walls, some quite mundane, but others are disturbing in nature, " +
-                        "and make you feel uneasy. There are two doors in this room, one leads to the entryway, " +
-                        "the other leads to the kitchen. An old piano rests on the left side of the room, " +
-                        "it is in remarkably pristine condition.",
+                "You stand in the parlor.   A quaint room, albeit somewhat dusty and full of cobwebs.  A " +
+                        "grand piano rests in the center of the room, and a lit candle eerily rests on it, " +
+                        "steadily burning.   Marks on the floor indicate there used to be much more furniture in " +
+                        "this room.   As you gaze again at the piano your mind wanders, almost against your will, " +
+                        "and you can picture a dark figure playing a somber song on the keys.  It takes several " +
+                        "moments while lost in the imaginary music to regain control of your senses.  Feeling " +
+                        "disturbed, you have a strong desire to return to the Front Hall through the door behind " +
+                        "you.",
                 "file:src/resources/image/Parlor.png",
-                new String[]{"Entryway", "Kitchen"}
+                new String[]{"Front Hall"}
         ));
 
         rooms.add(new Room(
-                "Entryway",
-                "You are now in the entryway. The air is chilly, and you feel a draft from somewhere above. " +
-                        "There is a grand staircase leading up, and a door back to the parlor.  The front door, try as "+
-                        "you might to open it, has somehow locked itself, and no force you can muster make it give way. ",
-                "file:src/resources/image/Entryway.png",
-                new String[]{"Parlor", "Upstairs", "Dining Room"}
-        ));
-
-        rooms.add(new Room(
-                "Kitchen",
-                "You are in the kitchen. Dust and cobwebs cover the surfaces. A strange odor fills the air. " +
-                        "There is a door leading back to the parlor.",
-                "file:src/resources/image/Kitchen.png",
-                new String[]{"Parlor"}
+                "Front Hall",
+                "You stand in the Front Hall of the house.  Calling out does nothing and no human presence " +
+                "arrives to the room.   The door you entered this place with, has somehow locked itself, " +
+                "and no force you can muster can open it.   The memory of the bitter cold stays with you. " +
+                "Now in relative warmth a new feeling has replaced what should be relief.   Something " +
+                "is very wrong here, and you can feel it.   Many lights are on but there is silence, a " +
+                "suffocating silence that you can almost feel in your throat.  The room itself is quite " +
+                "beautiful,  a grand staircase goes to the upper floor, a chandelier hangs from the " +
+                "ceiling.  A door on the left goes to a parlor, and a door behind you goes to what seems " +
+                "to be a dining room.   Two paintings hang here on the walls, one of a sad looking young " +
+                "woman, and the other of a woman who seems to be in severe distress.  Her hair is shorn, " +
+                "and her clothing is gray.  Your steps seem like thunder on the floor as you walk around. " +
+                "Something unseen seems to be watching you, no matter how hard you try to brush away that "+
+                "thought.",
+                "file:src/resources/image/FrontHall.png",
+                new String[]{"Parlor", "Upstairs Loft", "Dining Room"}
         ));
 
         rooms.add(new Room(
                 "Dining Room",
                 "You stand in a dining room, some dinnerware still rests on the table, as if whomever last " +
                         "had a meal here had to leave in a hurry. "+
-                        "Behind you, an open doorway leads back to the entryway. ",
+                        "Behind you, an open doorway leads back to the entryway, and another doorway leads to a kitchen. ",
                 "file:src/resources/image/DiningRoom.png",
-                new String[]{"Entryway"}
+                new String[]{"Front Hall", "Kitchen"}
         ));
 
         rooms.add(new Room(
-                "Upstairs",
-                "You are in a living room at the top of the stairs.  As you enter this area, your blood freezes as " +
-                        "you see a ghostly apparition appear in the center of the room momentarily.  Behind you, stairs go back"+
-                        "to the entryway.",
+                "Kitchen",
+                "As you enter the kitchen a bright flash of light envelops the room, through the windows," +
+                        "where out of the corner of your eye you catch a glimpse of a ray of lightning strike not " +
+                        "very far from the house.   Strangely, no sound or familiar thunderclap accompanies it.  " +
+                        "After the alarming surprise of the blast of light, you begin to notice the contents of the " +
+                        "room.   Immediately a very musky odor assaults your senses coming from the sink.   This " +
+                        "room seems to be a little more modern than other parts of the house, with newer-looking " +
+                        "appliances, albeit in very poor condition.   The refrigerator in particular, on closer " +
+                        "inspection, has strange markings on it, that almost cause pain to look at.   A gaping hole " +
+                        "has been punctured into its door.   Behind you, a doorway goes back to the dining room, " +
+                        "and you notice a narrow door in the other corner of the room, with some tight stairs " +
+                        "leading down into a basement.",
+                "file:src/resources/image/Kitchen.png",
+                new String[]{"Dining Room", "Basement"}
+        ));
+
+        rooms.add(new Room(
+                "Upstairs Loft",
+                "(To do)",
                 "file:src/resources/image/Upstairs.png",
-                new String[]{"Entryway", "Bedroom"}
+                new String[]{"Front Hall", "Master Bedroom", "Guest Bedroom", "Servant's Room"}
         ));
 
         rooms.add(new Room(
-                "Bedroom",
+                "Master Bedroom",
                 "(To do)  " +
                         " ",
-                "file:src/resources/image/Bedroom.png",
-                new String[]{"Upstairs", "Bathroom"}
+                "file:src/resources/image/MasterBedroom.png",
+                new String[]{"Upstairs Loft", "Washroom", "Study"}
         ));
 
         rooms.add(new Room(
-                "Bathroom",
+                "Washroom",
                 "(To do)  " +
                         " ",
-                "file:src/resources/image/Bathroom.png",
-                new String[]{"Bedroom"}
+                "file:src/resources/image/Washroom.png",
+                new String[]{"Master Bedroom"}
+        ));
+
+        rooms.add(new Room(
+                "Basement",
+                "(To do)  " +
+                        " ",
+                "file:src/resources/image/Basement.png",
+                new String[]{"Kitchen", "Wine Cellar"}
+        ));
+
+        rooms.add(new Room(
+                "Wine Cellar",
+                "(To do)  " +
+                        " ",
+                "file:src/resources/image/WineCellar.png",
+                new String[]{"Basement"}
+        ));
+
+        rooms.add(new Room(
+                "Guest Bedroom",
+                "(To do)  " +
+                        " ",
+                "file:src/resources/image/GuestBedroom.png",
+                new String[]{"Upstairs Loft", "Stairway"}
+        ));
+
+        rooms.add(new Room(
+                "Stairway",
+                "(To do)  " +
+                        " ",
+                "file:src/resources/image/Stairway.png",
+                new String[]{"Guest Bedroom", "Attic"}
+        ));
+
+        rooms.add(new Room(
+                "Attic",
+                "(To do)  " +
+                        " ",
+                "file:src/resources/image/Attic.png",
+                new String[]{"Stairway"}
+        ));
+
+        rooms.add(new Room(
+                "Study",
+                "(To do)  " +
+                        " ",
+                "file:src/resources/image/LibraryRoom.png",
+                new String[]{"Master Bedroom"}
+        ));
+
+        rooms.add(new Room(
+                "Servant's Room",
+                "(To do)  " +
+                        " ",
+                "file:src/resources/image/ServantBedroom.png",
+                new String[]{"Upstairs Loft"}
         ));
 
         // Add more rooms as needed...
