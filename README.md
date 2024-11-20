@@ -13,7 +13,6 @@ The game in its current state is unfinished, and I plan to add many more rooms.
 - **Exits and Navigation:** Rooms have designated exits that lead to other rooms, accessible through a user interface.
 - **Animations:** The game uses fade transitions for visuals like room changes and ghost appearances.
 - **Background Music:** Continuous background music that loops indefinitely to enhance the atmosphere.
-- **Special Effects:** Specific rooms trigger unique animations, like flickering lights or ghostly apparitions.
 
 ## Technologies Used
 - **Java 17**: Core programming language.
