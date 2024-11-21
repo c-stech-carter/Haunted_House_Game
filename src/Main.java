@@ -221,6 +221,7 @@ public class Main extends Application {
                         "as a very deep feeling of unease fills your mind. Knocking at the door brings no answer, " +
                         "and you decide to enter the home, so that you will not die of hypothermia outside it, waiting. " +
                         "The door is unlocked.",
+
                 "file:src/resources/image/FrontYard.png",
                 new String[]{"Front Hall"}
         ));
@@ -234,6 +235,7 @@ public class Main extends Application {
                         "moments while lost in the imaginary music to regain control of your senses.  Feeling " +
                         "disturbed, you have a strong desire to return to the Front Hall through the door behind " +
                         "you.",
+
                 "file:src/resources/image/Parlor.png",
                 new String[]{"Front Hall"}
         ));
@@ -241,7 +243,7 @@ public class Main extends Application {
         rooms.add(new Room(
                 "Front Hall",
                 "You stand in the Front Hall of the house.  Calling out does nothing and no human presence " +
-                "arrives to the room.   The door you entered this place with, has somehow locked itself, " +
+                "arrives to the room.   The door you entered this place with has somehow locked itself, " +
                 "and no force you can muster can open it.   The memory of the bitter cold stays with you. " +
                 "Now in relative warmth a new feeling has replaced what should be relief.   Something " +
                 "is very wrong here, and you can feel it.   Many lights are on but there is silence, a " +
@@ -253,15 +255,25 @@ public class Main extends Application {
                 "and her clothing is gray.  Your steps seem like thunder on the floor as you walk around. " +
                 "Something unseen seems to be watching you, no matter how hard you try to brush away that "+
                 "thought.",
+
                 "file:src/resources/image/FrontHall.png",
                 new String[]{"Parlor", "Upstairs Loft", "Dining Room"}
         ));
 
         rooms.add(new Room(
                 "Dining Room",
-                "You stand in a dining room, some dinnerware still rests on the table, as if whomever last " +
-                        "had a meal here had to leave in a hurry. "+
-                        "Behind you, an open doorway leads back to the entryway, and another doorway leads to a kitchen. ",
+                "You stand in a dining room, where it seems the spiders have created a tapestry of cobwebs.  " +
+                        "Curiously, although the webs are plentiful, none of them seem to have any living " +
+                        "residents, although there are plenty of dead ones.  Eerily, like most rooms in this place, " +
+                        "the lights are on, and dinnerware is still present on the table, as if whomever last dined " +
+                        "here had to leave in a hurry.   Some plates even have desiccated pieces of food on them.  " +
+                        "Two clocks tick on the walls, displaying times that don't match, and both seem to be " +
+                        "stuck, despite their sound.  One clock is set in a gold picture frame, the other in an " +
+                        "ornate wooden housing.   The dining chairs have all been pushed back, away from the table.  " +
+                        "Behind you a doorway leads back to the front hall, and another in the corner leads to a " +
+                        "kitchen.  Strangely your own name comes to your mind, very distinctly, as if someone had " +
+                        "spoken it in your ear, but without sound. ",
+
                 "file:src/resources/image/DiningRoom.png",
                 new String[]{"Front Hall", "Kitchen"}
         ));
@@ -279,85 +291,159 @@ public class Main extends Application {
                         "has been punctured into its door.   Behind you, a doorway goes back to the dining room, " +
                         "and you notice a narrow door in the other corner of the room, with some tight stairs " +
                         "leading down into a basement.",
+
                 "file:src/resources/image/Kitchen.png",
                 new String[]{"Dining Room", "Basement"}
         ));
 
         rooms.add(new Room(
-                "Upstairs Loft",
-                "(To do)",
-                "file:src/resources/image/Upstairs.png",
-                new String[]{"Front Hall", "Master Bedroom", "Guest Bedroom", "Servant's Room"}
-        ));
-
-        rooms.add(new Room(
-                "Master Bedroom",
-                "(To do)  " +
-                        " ",
-                "file:src/resources/image/MasterBedroom.png",
-                new String[]{"Upstairs Loft", "Washroom", "Study"}
-        ));
-
-        rooms.add(new Room(
-                "Washroom",
-                "(To do)  " +
-                        " ",
-                "file:src/resources/image/Washroom.png",
-                new String[]{"Master Bedroom"}
-        ));
-
-        rooms.add(new Room(
                 "Basement",
-                "(To do)  " +
-                        " ",
+                "Descending down some rickety stairs leads you to a basement.  The room seems more " +
+                        "cheerful than others, with colorful drawings pasted on the walls, and craft materials " +
+                        "stored in various containers.   A small furnace with a low flame is burning, most likely " +
+                        "providing the weak heat of the house that saved your life.  Taking a closer look at the " +
+                        "drawings reveals the work of a child, and they are quite charming, except one on the " +
+                        "right wall that reminds you of a skull or some grim, ghostly face.  At the back of the " +
+                        "room behind some shelves, you notice a very old looking door, which you think goes to a " +
+                        "wine cellar.   In that dark part of the room it seems some effort was made to keep this " +
+                        "particular door from casual view. ",
+
                 "file:src/resources/image/Basement.png",
                 new String[]{"Kitchen", "Wine Cellar"}
         ));
 
         rooms.add(new Room(
                 "Wine Cellar",
-                "(To do)  " +
-                        " ",
+                "As you enter the wine cellar the first thing you notice is how much dust there is, more " +
+                        "so than other areas of the house.   It feels as if you are the first to enter this room " +
+                        "in a very, very long time.   Within moments an almost audible scream fills your mind, " +
+                        "although it doesn't seem human.  And before you can panic, your mind fixates unwillingly " +
+                        "on a space of the floor, as if whatever invisible thing present here wants you to see what " +
+                        "had happened there.   Shaken, you regain control, wishing you hadn't entered this room.  " +
+                        "As you look around you notice the casks, and many full bottles of wine, some of which " +
+                        "seem from very old years.  However, the experience of whatever evil fills this place " +
+                        "makes it hard to concentrate and your only desire is to return to the other basement " +
+                        "room.",
+
                 "file:src/resources/image/WineCellar.png",
                 new String[]{"Basement"}
         ));
 
         rooms.add(new Room(
+                "Upstairs Loft",
+                "As you enter the upstairs loft you stop dead in your tracks as a very visible shape of a " +
+                        "human-like figure appears momentarily.   It looks it you with cold white eyes, and its body " +
+                        "is shrouded in flowing shadow.   After the initial shock of actually seeing the specter " +
+                        "your heart begins to thump loudly in your chest.   After some time you calm down and " +
+                        "survey the room, which features most noticeably, several paintings that seem to glare at " +
+                        "you with dark sockets.  Two burning candles sit side-by-side on a table, and cobwebs and " +
+                        "dust seem to cover almost every surface in the room.   Looking to the back of the room you " +
+                        "see two hallways, one leads to master bedroom, and the other leads to two other rooms, " +
+                        "which look to be a guest bedroom and some servant's quarters. ",
+
+                "file:src/resources/image/Upstairs.png",
+                new String[]{"Front Hall", "Master Bedroom", "Guest Bedroom", "Servant's Room"}
+        ));
+
+        rooms.add(new Room(
+                "Master Bedroom",
+                "You enter the master bedroom and are surprised at its poor condition, even after seeing " +
+                        "other areas of this house.  The bedsheets of the large bed are tattered and torn, and in " +
+                        "the corner the fabric of a draped area looks to be torn to shreds.  The walls have great " +
+                        "patches of decay all over them, and torn pieces of wallpaper hang from the ceiling.  " +
+                        "Walking in the room is treacherous due to missing floorboards.  Disturbingly, two skulls " +
+                        "casually rest on twin dressers with mirrors.   They look real, and placed with intent.  " +
+                        "You have no desire to look closer to see if they are actually authentic.   Behind you a " +
+                        "door leads back to the upstairs loft, and another door leads to a small bathroom.  To your " +
+                        "right, a doorway leads to a den or study area.",
+
+                "file:src/resources/image/MasterBedroom.png",
+                new String[]{"Upstairs Loft", "Washroom", "Study"}
+        ));
+
+        rooms.add(new Room(
+                "Washroom",
+                "As you enter the small bathroom, again to your great dismay the apparition you saw in the " +
+                        "loft appears for a few moments.  You can feel anger emanating from it.   It seems " +
+                        "especially displeased at your presence in this room in particular.   After it disappears, " +
+                        "you notice a foul black liquid in a bathtub that has also spilled onto the floor. " +
+                        "The stench is nauseating and you are surprised you could not smell it from the bedroom.  " +
+                        "You can hear faint whispering echoing off of the tile and you notice glyphs and " +
+                        "drawings on the walls.   The whispers seem to ooze from them.  Patches of black mold have " +
+                        "grown in many places on the wall.   The specter seems to still be in the room, although " +
+                        "not visible, and you feel that everything it wants at this moment is for you to leave.",
+
+                "file:src/resources/image/Washroom.png",
+                new String[]{"Master Bedroom"}
+        ));
+
+        rooms.add(new Room(
+                "Study",
+                "A you enter the study room, you notice how well-kept it looks.  Quite the difference from " +
+                        "the bedroom.  Bookcases adorn the room and in the center is a desk, with an open journal " +
+                        "resting on it, the pages are all blank, although you can see the imprints as if something " +
+                        "had written on the pages, yet not transferred any ink.  A candle rests on the desk as if " +
+                        "someone had been recently here.  Many other books are on the shelves and are scattered about, and  " +
+                        "perusing them reveals them all to be in neither a language or alphabet you can recognize.  Some " +
+                        "pictures on the wall seem to be vintage anatomy sketches of the human face and an old photograph of a " +
+                        "cadaver likely from an archeological site.  A globe of the Earth sits in spinning display " +
+                        "but the country borders seem to be from a much older time period.",
+
+                "file:src/resources/image/LibraryRoom.png",
+                new String[]{"Master Bedroom"}
+        ));
+
+        rooms.add(new Room(
                 "Guest Bedroom",
-                "(To do)  " +
-                        " ",
+                "The guest bedroom is dimly lit and in disarray.  It seems as if someone had rummaged " +
+                        "through the chest of drawers hastily looking for something.  Some dried mud covers parts " +
+                        "of the floor.  A small lone rocking chair sits in the middle of the room, and seems to " +
+                        "sway when you are not directly looking at it.  Above the chair hangs a strange wire " +
+                        "sculpture in the form of a wine-glass.  In the back of the room you see a door at the " +
+                        "depths of a small closet, it looks like there is a stairway that goes up behind it. ",
+
                 "file:src/resources/image/GuestBedroom.png",
                 new String[]{"Upstairs Loft", "Stairway"}
         ));
 
         rooms.add(new Room(
                 "Stairway",
-                "(To do)  " +
-                        " ",
+                "As you enter the narrow stairway you see that it leads to an attic.  At the top of the " +
+                        "stairs there seems to be a figure standing there, but it disappears from view when you try " +
+                        "to focus on it.  Very bright moonlight comes from the doorway.  The stairs themselves " +
+                        "seem old and precarious, you make a mental note to be careful if you decide to climb " +
+                        "them.",
+
                 "file:src/resources/image/Stairway.png",
                 new String[]{"Guest Bedroom", "Attic"}
         ));
 
         rooms.add(new Room(
                 "Attic",
-                "(To do)  " +
-                        " ",
+                "The ceiling is low in the attic and it is difficult to move around.  The most distinct " +
+                        "part of this room is the window, which at first looked as if the moon impossibly filled " +
+                        "it completely, but looking closer reveals it to be a very detailed frosted glass window " +
+                        "with the surface of the moon on it.   It seems to glow with more light than physically " +
+                        "possible for the real moon to provide behind it.  Several wooden chests and boxes contain " +
+                        "old items like bottles and empty boxes of vintage detergent.   One chest in the center of " +
+                        "the room is so heavy it can't be lifted at all, and is locked so tight you doubt you " +
+                        "could open it without a tool.",
+
                 "file:src/resources/image/Attic.png",
                 new String[]{"Stairway"}
         ));
 
         rooms.add(new Room(
-                "Study",
-                "(To do)  " +
-                        " ",
-                "file:src/resources/image/LibraryRoom.png",
-                new String[]{"Master Bedroom"}
-        ));
-
-        rooms.add(new Room(
                 "Servant's Room",
-                "(To do)  " +
-                        " ",
+                "The servant's quarters seem bare and poorly furnished.  Huge cobwebs cover some of the " +
+                        "corners of the room.   A small lit lamp sits on a nightstand, and you wonder how long it " +
+                        "has been turned on.  The room seems very drab compared to other places in the house, and " +
+                        "not much catches your interest until you see some grotesque totems pinned to the wall in " +
+                        "the corner of the room.   As you inspect them you hear a faint knocking coming from the " +
+                        "inside of a large armoire in the corner of the room.   Reluctantly you open it, finding " +
+                        "it empty besides some dusty, poorly-folded bed linens, and the knocking stops.  You " +
+                        "decide not to look at the totems any further.",
+
                 "file:src/resources/image/ServantBedroom.png",
                 new String[]{"Upstairs Loft"}
         ));
