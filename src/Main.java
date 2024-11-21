@@ -208,17 +208,17 @@ public class Main extends Application {
         rooms = new ArrayList<>();
         rooms.add(new Room(
                 "Front Yard",
-                "What a night... You've crashed your car in the middle of nowhere.  Whatever selfish " +
+                "\tWhat a night... you've crashed your car in the middle of nowhere.  Whatever selfish " +
                         "reason you had to travel so late at night to visit your family across the state, seems " +
-                        "silly now.   \"I should've waited until the morning,\" you say to yourself, as a bitter " +
+                        "silly now.  \"I should've waited until the morning,\" you say to yourself, as a bitter " +
                         "cold sets in.  After waiting for someone to pass by on the road for several hours, no " +
                         "help arrives, and the whole time there is no service for your phone, not even GPS.  " +
-                        "Shivering you begin to walk out of desperation, and after a long time you see a faint " +
-                        "light down a very unkempt road that departs from the highway.   The cold begins to " +
+                        "Shivering, you begin to walk out of desperation, and after a long time you see a faint " +
+                        "light down a very unkempt road that departs from the highway.  \n\t The cold begins to " +
                         "become unbearable, and your shivering is becoming violent as it shakes your whole body. "+
                         "Soon, you see a very old looking house, with many lights on, although you can see no one in " +
                         "any of them.  You rush to the door, nearly collapsing from the cold.  Momentarily you pause, " +
-                        "as a very deep feeling of unease fills your mind. Knocking at the door brings no answer, " +
+                        "as a very deep feeling of unease fills your mind.  Knocking at the door brings no answer, " +
                         "and you decide to enter the home, so that you will not die of hypothermia outside it, waiting. " +
                         "The door is unlocked.",
 
@@ -227,7 +227,7 @@ public class Main extends Application {
         ));
         rooms.add(new Room(
                 "Parlor",
-                "You stand in the parlor.   A quaint room, albeit somewhat dusty and full of cobwebs.  A " +
+                "\tYou stand in the parlor - a quaint room, albeit somewhat dusty and filled with cobwebs.  A " +
                         "grand piano rests in the center of the room, and a lit candle eerily rests on it, " +
                         "steadily burning.   Marks on the floor indicate there used to be much more furniture in " +
                         "this room.   As you gaze again at the piano your mind wanders, almost against your will, " +
@@ -242,12 +242,12 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Front Hall",
-                "You stand in the Front Hall of the house.  Calling out does nothing and no human presence " +
+                "\tYou stand in the Front Hall of the house.  Calling out does nothing and no human presence " +
                 "arrives to the room.   The door you entered this place with has somehow locked itself, " +
-                "and no force you can muster can open it.   The memory of the bitter cold stays with you. " +
+                "and no force you muster can open it.   The memory of the bitter cold stays with you. " +
                 "Now in relative warmth a new feeling has replaced what should be relief.   Something " +
                 "is very wrong here, and you can feel it.   Many lights are on but there is silence, a " +
-                "suffocating silence that you can almost feel in your throat.  The room itself is quite " +
+                "suffocating silence that you can almost feel in your throat.  \n\tThe room itself is quite " +
                 "beautiful,  a grand staircase goes to the upper floor, a chandelier hangs from the " +
                 "ceiling.  A door on the left goes to a parlor, and a door behind you goes to what seems " +
                 "to be a dining room.   Two paintings hang here on the walls, one of a sad looking young " +
@@ -262,12 +262,12 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Dining Room",
-                "You stand in a dining room, where it seems the spiders have created a tapestry of cobwebs.  " +
+                "\tYou stand in a dining room, where it seems the spiders have spun a tapestry of cobwebs.  " +
                         "Curiously, although the webs are plentiful, none of them seem to have any living " +
                         "residents, although there are plenty of dead ones.  Eerily, like most rooms in this place, " +
                         "the lights are on, and dinnerware is still present on the table, as if whomever last dined " +
                         "here had to leave in a hurry.   Some plates even have desiccated pieces of food on them.  " +
-                        "Two clocks tick on the walls, displaying times that don't match, and both seem to be " +
+                        "\n\tTwo clocks hang on the walls, ticking, displaying times that don't match, and both seem to be " +
                         "stuck, despite their sound.  One clock is set in a gold picture frame, the other in an " +
                         "ornate wooden housing.   The dining chairs have all been pushed back, away from the table.  " +
                         "Behind you a doorway leads back to the front hall, and another in the corner leads to a " +
@@ -280,15 +280,15 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Kitchen",
-                "As you enter the kitchen a bright flash of light envelops the room, through the windows," +
+                "\tAs you enter the kitchen a bright flash of light envelops the room, through the windows," +
                         "where out of the corner of your eye you catch a glimpse of a ray of lightning strike not " +
                         "very far from the house.   Strangely, no sound or familiar thunderclap accompanies it.  " +
                         "After the alarming surprise of the blast of light, you begin to notice the contents of the " +
-                        "room.   Immediately a very musky odor assaults your senses coming from the sink.   This " +
+                        "room.   \n\tImmediately a very musky odor assaults your senses coming from the sink.   This " +
                         "room seems to be a little more modern than other parts of the house, with newer-looking " +
                         "appliances, albeit in very poor condition.   The refrigerator in particular, on closer " +
                         "inspection, has strange markings on it, that almost cause pain to look at.   A gaping hole " +
-                        "has been punctured into its door.   Behind you, a doorway goes back to the dining room, " +
+                        "punctures its door.   Behind you, a doorway goes back to the dining room, " +
                         "and you notice a narrow door in the other corner of the room, with some tight stairs " +
                         "leading down into a basement.",
 
@@ -298,13 +298,13 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Basement",
-                "Descending down some rickety stairs leads you to a basement.  The room seems more " +
+                "\tDescending down some rickety stairs leads you to a basement.  The room seems more " +
                         "cheerful than others, with colorful drawings pasted on the walls, and craft materials " +
                         "stored in various containers.   A small furnace with a low flame is burning, most likely " +
                         "providing the weak heat of the house that saved your life.  Taking a closer look at the " +
-                        "drawings reveals the work of a child, and they are quite charming, except one on the " +
+                        "drawings reveals the work of a child, and they are quite charming—except for one on the " +
                         "right wall that reminds you of a skull or some grim, ghostly face.  At the back of the " +
-                        "room behind some shelves, you notice a very old looking door, which you think goes to a " +
+                        "room behind some shelves, you notice a very old looking door, which you believe leads to a " +
                         "wine cellar.   In that dark part of the room it seems some effort was made to keep this " +
                         "particular door from casual view. ",
 
@@ -314,7 +314,7 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Wine Cellar",
-                "As you enter the wine cellar the first thing you notice is how much dust there is, more " +
+                "\tAs you enter the wine cellar the first thing you notice is the sheer amount of dust, more " +
                         "so than other areas of the house.   It feels as if you are the first to enter this room " +
                         "in a very, very long time.   Within moments an almost audible scream fills your mind, " +
                         "although it doesn't seem human.  And before you can panic, your mind fixates unwillingly " +
@@ -331,8 +331,8 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Upstairs Loft",
-                "As you enter the upstairs loft you stop dead in your tracks as a very visible shape of a " +
-                        "human-like figure appears momentarily.   It looks it you with cold white eyes, and its body " +
+                "\tAs you enter the upstairs loft you stop dead in your tracks as a very visible shape of a " +
+                        "human-like figure appears momentarily.   It looks at you with cold white eyes, and its body " +
                         "is shrouded in flowing shadow.   After the initial shock of actually seeing the specter " +
                         "your heart begins to thump loudly in your chest.   After some time you calm down and " +
                         "survey the room, which features most noticeably, several paintings that seem to glare at " +
@@ -347,12 +347,12 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Master Bedroom",
-                "You enter the master bedroom and are surprised at its poor condition, even after seeing " +
+                "\tYou enter the master bedroom and are surprised at its poor condition, even after seeing " +
                         "other areas of this house.  The bedsheets of the large bed are tattered and torn, and in " +
                         "the corner the fabric of a draped area looks to be torn to shreds.  The walls have great " +
                         "patches of decay all over them, and torn pieces of wallpaper hang from the ceiling.  " +
                         "Walking in the room is treacherous due to missing floorboards.  Disturbingly, two skulls " +
-                        "casually rest on twin dressers with mirrors.   They look real, and placed with intent.  " +
+                        "casually rest on twin dressers with mirrors.   They look real, and placed intentionally.  " +
                         "You have no desire to look closer to see if they are actually authentic.   Behind you a " +
                         "door leads back to the upstairs loft, and another door leads to a small bathroom.  To your " +
                         "right, a doorway leads to a den or study area.",
@@ -363,8 +363,8 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Washroom",
-                "As you enter the small bathroom, again to your great dismay the apparition you saw in the " +
-                        "loft appears for a few moments.  You can feel anger emanating from it.   It seems " +
+                "\tAs you enter the small bathroom, to your great dismay, the apparition you saw in the " +
+                        "loft appears again for a few moments.  You can feel anger emanating from it.   It seems " +
                         "especially displeased at your presence in this room in particular.   After it disappears, " +
                         "you notice a foul black liquid in a bathtub that has also spilled onto the floor. " +
                         "The stench is nauseating and you are surprised you could not smell it from the bedroom.  " +
@@ -379,13 +379,13 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Study",
-                "A you enter the study room, you notice how well-kept it looks.  Quite the difference from " +
-                        "the bedroom.  Bookcases adorn the room and in the center is a desk, with an open journal " +
+                "\tA you enter the study room, you notice how well-kept it looks.  Quite the difference from " +
+                        "the bedroom.  Bookcases adorn the room and at the center stands a desk, with an open journal " +
                         "resting on it, the pages are all blank, although you can see the imprints as if something " +
                         "had written on the pages, yet not transferred any ink.  A candle rests on the desk as if " +
                         "someone had been recently here.  Many other books are on the shelves and are scattered about, and  " +
                         "perusing them reveals them all to be in neither a language or alphabet you can recognize.  Some " +
-                        "pictures on the wall seem to be vintage anatomy sketches of the human face and an old photograph of a " +
+                        "pictures on the wall seem to be vintage anatomical sketches of a human face and an old photograph of a " +
                         "cadaver likely from an archeological site.  A globe of the Earth sits in spinning display " +
                         "but the country borders seem to be from a much older time period.",
 
@@ -395,12 +395,12 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Guest Bedroom",
-                "The guest bedroom is dimly lit and in disarray.  It seems as if someone had rummaged " +
+                "\tThe guest bedroom is dimly lit and in disarray.  It seems as if someone had rummaged " +
                         "through the chest of drawers hastily looking for something.  Some dried mud covers parts " +
                         "of the floor.  A small lone rocking chair sits in the middle of the room, and seems to " +
                         "sway when you are not directly looking at it.  Above the chair hangs a strange wire " +
                         "sculpture in the form of a wine-glass.  In the back of the room you see a door at the " +
-                        "depths of a small closet, it looks like there is a stairway that goes up behind it. ",
+                        "depths of a small closet, it looks like there is a stairway leading up behind it. ",
 
                 "file:src/resources/image/GuestBedroom.png",
                 new String[]{"Upstairs Loft", "Stairway"}
@@ -408,7 +408,7 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Stairway",
-                "As you enter the narrow stairway you see that it leads to an attic.  At the top of the " +
+                "\tAs you enter the narrow stairway you see that it leads to an attic.  At the top of the " +
                         "stairs there seems to be a figure standing there, but it disappears from view when you try " +
                         "to focus on it.  Very bright moonlight comes from the doorway.  The stairs themselves " +
                         "seem old and precarious, you make a mental note to be careful if you decide to climb " +
@@ -420,7 +420,7 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Attic",
-                "The ceiling is low in the attic and it is difficult to move around.  The most distinct " +
+                "\tThe ceiling is low in the attic and it is difficult to move around.  The most distinct " +
                         "part of this room is the window, which at first looked as if the moon impossibly filled " +
                         "it completely, but looking closer reveals it to be a very detailed frosted glass window " +
                         "with the surface of the moon on it.   It seems to glow with more light than physically " +
@@ -435,10 +435,10 @@ public class Main extends Application {
 
         rooms.add(new Room(
                 "Servant's Room",
-                "The servant's quarters seem bare and poorly furnished.  Huge cobwebs cover some of the " +
+                "\tThe servant’s quarters appear bare and poorly furnished.  Huge cobwebs cover some of the " +
                         "corners of the room.   A small lit lamp sits on a nightstand, and you wonder how long it " +
                         "has been turned on.  The room seems very drab compared to other places in the house, and " +
-                        "not much catches your interest until you see some grotesque totems pinned to the wall in " +
+                        "not much catches your interest until you see some grotesque totems pinned on the walls in " +
                         "the corner of the room.   As you inspect them you hear a faint knocking coming from the " +
                         "inside of a large armoire in the corner of the room.   Reluctantly you open it, finding " +
                         "it empty besides some dusty, poorly-folded bed linens, and the knocking stops.  You " +
