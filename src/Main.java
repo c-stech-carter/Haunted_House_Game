@@ -29,6 +29,10 @@ import javafx.util.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Main class serves as the entry point for the haunted house game. It initializes the GUI elements using JavaFX
+ * and provides methods for handling user interaction, updating the game state, and displaying different rooms.
+ */
 public class Main extends Application {
     //Initial declaration of some variables.
     private BorderPane borderPane;
@@ -39,6 +43,13 @@ public class Main extends Application {
 
     private List<Room> rooms;
 
+
+    /**
+     * The start method is called when the application is launched. It sets up the primary stage and initializes
+     * the user interface components, such as the game window, text area for room descriptions, and interactive elements.
+     *
+     * @param primaryStage The primary stage for this JavaFX application.
+     */
     @Override
     public void start(Stage primaryStage) {
         try {
@@ -113,8 +124,12 @@ public class Main extends Application {
         updateRoom(findRoomByName("Front Yard"));  //Method for controlling the graphics and exits
     }
 
-
-    //Method for searching for specific rooms in 'rooms' Room ArrayList
+    /**
+     * Searches for a specific room by its name in the rooms ArrayList.
+     *
+     * @param roomName The name of the room to find.
+     * @return The Room object if found, otherwise null.
+     */
     private Room findRoomByName(String roomName) {
         for (Room room : rooms) {
             if (room.getName().equalsIgnoreCase(roomName)) {
@@ -124,6 +139,11 @@ public class Main extends Application {
         return null;
     }
 
+    /**
+     * Updates the game window to display the specified room's description and image, and updates the exits.
+     *
+     * @param room The room to be displayed.
+     */
     private void updateRoom(Room room) {
         if (room == null) return;
 
@@ -155,7 +175,9 @@ public class Main extends Application {
         }
     }
 
-    // Method to animate the lights flickering in the Kitchen
+    /**
+     * Animates the lights flickering in the kitchen using a fade transition.
+     */
     private void animateLightsFlicker() {
         FadeTransition lightsFlicker = new FadeTransition(Duration.seconds(0.1), backgroundView);
         lightsFlicker.setFromValue(1.0);
@@ -165,6 +187,9 @@ public class Main extends Application {
         lightsFlicker.play();
     }
 
+    /**
+     * Shows a ghost animation by fading in and out an image of a ghost.
+     */
     private void showGhost() {
         // Load the ghost image
         Image ghostImage = new Image("file:src/resources/image/Ghost.png");
@@ -203,7 +228,9 @@ public class Main extends Application {
 
 
 
-    //Rooms are initialized here
+    /**
+     * Initializes the rooms in the game by creating Room objects and adding them to the list.
+     */
     private void initializeRooms() {
         rooms = new ArrayList<>();
         rooms.add(new Room(
@@ -451,6 +478,11 @@ public class Main extends Application {
         // Add more rooms as needed...
     }
 
+    /**
+     * The main method to launch the JavaFX application.
+     *
+     * @param args Command-line arguments.
+     */
     public static void main(String[] args) {
         launch(args);
     }
