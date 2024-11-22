@@ -6,13 +6,13 @@
 
 ## Overview
 This project is a game developed as a final project for CSCI 1112, utilizing Java and Open JavaFX. It simulates exploring a haunted house using pixel art-style graphics, where players must navigate through different rooms of the haunted house.
-The game in its current state is unfinished, and I plan to add many more rooms.
+The game in its current state is unfinished, and I plan to add many more rooms.  Currently the game does not end, but allows a free exploration of the house until the program is closed.
 
 ## Features
 - **Room Exploration:** Players can explore multiple rooms, each with unique descriptions and visuals.
 - **Exits and Navigation:** Rooms have designated exits that lead to other rooms, accessible through a user interface.
 - **Animations:** The game uses fade transitions for visuals like room changes and ghost appearances.
-- **Background Music:** Continuous background music that loops indefinitely to enhance the atmosphere.
+- **Background Music:** Continuous background music that loops indefinitely to enhance the atmosphere.   The current .mp3 came from pixabay.com, I'm still looking for the perfect soundtrack for this.
 
 ## Technologies Used
 - **Java 17**: Core programming language.
