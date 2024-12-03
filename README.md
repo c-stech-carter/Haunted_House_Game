@@ -32,7 +32,19 @@ The game in its current state is unfinished, and I plan to add many more rooms. 
 3. Set the following VM options to add the JavaFX module path and necessary modules:
 `--module-path "<path_to_javafx_sdk_lib>" --add-modules javafx.controls,javafx.fxml,javafx.media`
 
-4. Run the `Main` class to start the game.
+### Alternatively run the .jar located in the base folder of this repository.
+Requirements:
+- Java 17 or later installed on your computer.
+- JavaFX SDK downloaded and extracted on your machine.
+####Follow these steps:
+1. Open a terminal or command prompt.
+2. Navigate to the folder where the .jar file is located.  (easily done in explorer by right-clicking in the folder and select "Open in Terminal"
+3. Run the following command, replacing pathTo\javafx-sdk-xx\lib with the actual path to the lib folder in your JavaFX SDK installation:
+`java --module-path pathTo\javafx-sdk-xx\lib --add-modules javafx.controls,javafx.fxml -jar Haunted_Game.jar`
+Example:
+`java --module-path C:\javafx-sdk-23\lib --add-modules javafx.controls,javafx.fxml -jar Haunted_Game.jar`
+
+5. Run the `Main` class to start the game.
 
 ## Game Instructions
 1. **Start the Game**: The game begins in the "Front Yard" of the haunted house. The player must explore to uncover more about the mysterious house.
