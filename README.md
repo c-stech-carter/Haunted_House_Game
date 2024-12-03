@@ -33,7 +33,7 @@ The game in its current state is unfinished, and I plan to add many more rooms. 
 ```--module-path "<path_to_javafx_sdk_lib>" --add-modules javafx.controls,javafx.fxml,javafx.media```
 
 ### Alternatively run the .jar located in the base folder of this repository.  
-(It does not have sound)
+(It does not have sound)  
 Requirements:
 - Java 17 or later installed on your computer.
 - JavaFX SDK downloaded and extracted on your machine.
