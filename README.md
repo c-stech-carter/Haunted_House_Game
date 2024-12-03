@@ -40,7 +40,7 @@ Requirements:
 1. Open a terminal or command prompt.
 2. Navigate to the folder where the .jar file is located.  (easily done in explorer by right-clicking in the folder and select "Open in Terminal"
 3. Run the following command, replacing pathTo\javafx-sdk-xx\lib with the actual path to the lib folder in your JavaFX SDK installation:
-```java --module-path pathTo\javafx-sdk-xx\lib --add-modules javafx.controls,javafx.fxml -jar Haunted_Game.jar```
+```java --module-path pathTo\javafx-sdk-xx\lib --add-modules javafx.controls,javafx.fxml -jar Haunted_Game.jar```  
 Example:
 ```java --module-path C:\javafx-sdk-23\lib --add-modules javafx.controls,javafx.fxml -jar Haunted_Game.jar```
 
